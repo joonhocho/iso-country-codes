@@ -1,6 +1,6 @@
 {
   "name": "iso-country-codes",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "ISO Country Codes including Alpha-2, Alpha-3, and numeric codes",
   "main": "lib/index.js",
   "directories": {
