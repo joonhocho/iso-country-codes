@@ -16,13 +16,17 @@ describe('iso-country-codes', () => {
     expect(Object.keys(byNumeric).length).to.equal(249);
 
     codes.forEach((code) => {
-      const {name, alpha2, alpha3, numeric} = code;
+      const {name, altName, shortName, alpha2, alpha3, numeric} = code;
 
       expect(code).to.equal(byAlpha2[alpha2]);
       expect(code).to.equal(byAlpha3[alpha3]);
       expect(code).to.equal(byNumeric[numeric]);
 
       expect(name.trim()).to.equal(name);
+      expect(altName && altName.trim()).to.equal(altName);
+      expect(shortName && shortName.trim()).to.equal(shortName);
+      expect(name).to.not.equal(altName);
+      expect(name).to.not.equal(shortName);
       expect(name.length > 0).to.be.true;
 
       expect(alpha2).to.match(/^[A-Z]{2}$/);
@@ -42,5 +46,7 @@ describe('iso-country-codes', () => {
       expect(numeric in numericMap).to.be.false;
       numericMap[numeric] = true;
     });
+
+    console.log(JSON.stringify(codes, null, '  '));
   });
 });
