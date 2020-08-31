@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "description": "ISO Country Codes including Alpha-2, Alpha-3, and numeric codes",
   "main": "lib/index.js",
+  "typings": "index.d.ts",
   "directories": {
     "test": "test"
   },
